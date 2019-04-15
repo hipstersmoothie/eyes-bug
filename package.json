@@ -1,0 +1,27 @@
+{
+  "name": "eyes-bug",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "test:visual": "npm-run-all --parallel 'storybook -- --ci' applitools",
+    "applitools": "wait-port http://localhost:6006 && eyes-storybook -u http://localhost:6006 --conf applitools.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@applitools/eyes-storybook": "^2.6.8",
+    "@babel/core": "^7.4.3",
+    "@storybook/addon-actions": "^5.1.0-alpha.27",
+    "@storybook/addon-links": "^5.1.0-alpha.27",
+    "@storybook/addons": "^5.1.0-alpha.27",
+    "@storybook/react": "^5.1.0-alpha.27",
+    "babel-loader": "^8.0.5",
+    "npm-run-all": "^4.1.5",
+    "wait-port": "^0.2.2"
+  }
+}
